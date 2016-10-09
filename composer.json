@@ -9,7 +9,7 @@
     "yii 2"
   ],
   "license": "BSD-3-Clause",
-
+  "version":"1.0.0-dev",
   "authors": [
     {
       "name": "Listopadov Sergei",
@@ -17,6 +17,7 @@
     }
   ],
   "require": {
+    "php":"5.4.*",
     "yiisoft/yii2": "~2.0.0",
     "yiisoft/yii2-swiftmailer": "5.4.*"
   },
