@@ -1,0 +1,28 @@
+{
+  "name": "jluct/yii2-jluct-swiftmailer-helper",
+  "type": "yii2-extension",
+  "description": "The swiftmailer helper",
+  "keywords": [
+    "helper",
+    "swiftmailer",
+    "yii2",
+    "yii 2"
+  ],
+  "license": "BSD-3-Clause",
+
+  "authors": [
+    {
+      "name": "Listopadov Sergei",
+      "email": "panaev02@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.0",
+    "yiisoft/yii2-swiftmailer": "~5.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "jluct\\listSwiftmailerHelper\\": "src"
+    }
+  }
+}
