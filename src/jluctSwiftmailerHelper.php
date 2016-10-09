@@ -42,7 +42,24 @@ class jluctSwiftmailerHelper extends Component
 
     /**
      * jluctSwiftmailerHelper constructor.
-     *  * @param array $data - данные отправки
+     * @param string $emailBase - настройки рассылки.
+     * @param array $config - передаётся последним для конструктора предка
+     */
+    public function __construct( $emailBase, array $config = [])
+    {
+
+
+        $this->setEmailBase($emailBase);
+
+        $this->setMailer(Yii::$app->mailer);
+
+        parent::__construct($config);
+
+
+    }
+
+    /**
+     * @param array $data - данные отправки
      * 'setting' => - настройки по умаолчанию для всех сообщений. Переопределяются в messages.
      * Если для конкретного адреса не указан параметр он будет взят из setting
      * [
@@ -72,23 +89,8 @@ class jluctSwiftmailerHelper extends Component
      *      'subject' =>'' -  отправитель
      *      'params' => [] - параметры
      *  ]
-     * @param string $emailBase - настройки рассылки.
-     *
-     * @param array $config - передаётся последним для конструктора предка
+     * @return bool
      */
-    public function __construct( $emailBase, array $config = [])
-    {
-
-
-        $this->setEmailBase($emailBase);
-
-        $this->setMailer(Yii::$app->mailer);
-
-        parent::__construct($config);
-
-
-    }
-
     public function sendAllEmailMessages(array $data)
     {
         $this->setData($data);
@@ -164,8 +166,7 @@ class jluctSwiftmailerHelper extends Component
 
         return $out;
     }
-
-
+    
     /**
      * Добавляет данные из массива setting в случае отсутствия данных в самом сообщении
      * @param array $data - данные сообщения
