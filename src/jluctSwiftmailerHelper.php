@@ -166,7 +166,7 @@ class jluctSwiftmailerHelper extends Component
 
         return $out;
     }
-    
+
     /**
      * Добавляет данные из массива setting в случае отсутствия данных в самом сообщении
      * @param array $data - данные сообщения
